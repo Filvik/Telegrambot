@@ -23,7 +23,7 @@ public class CurrencyController {
     }
 
     @GetMapping("/getCurrencies")
-    public String getValuteCursOnDate1() throws Exception {
-        return "centralRussianBankService.getCurrenciesFromCbr()";
+    public List<ValuteCursOnDate> getValuteCursOnDate1() throws Exception {
+        return centralRussianBankService.getCurrenciesFromCbr();
     }
 }
