@@ -5,7 +5,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
-import ru.skillfactorydemo.tgbot.DemoApplication;
+import ru.skillfactorydemo.tgbot.TgbotApplication;
 import ru.skillfactorydemo.tgbot.repository.IncomeRepository;
 import ru.skillfactorydemo.tgbot.repository.SpendRepository;
 
@@ -16,7 +16,7 @@ import ru.skillfactorydemo.tgbot.repository.SpendRepository;
 @SpringBootTest
 // указываем, что инстанс теста создаётся на весь класс (т.е. для отработки всех методов)
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-@ContextConfiguration(classes= DemoApplication.class)
+@ContextConfiguration(classes= TgbotApplication.class)
 class FinanceServiceTest {
 
     // упоминание нашего сервиса с аннотацией, которая имитирует сервис

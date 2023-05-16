@@ -1,5 +1,6 @@
 package ru.skillfactorydemo.tgbot.service;
 
+import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.ws.client.core.WebServiceTemplate;
 import ru.skillfactorydemo.tgbot.dto.GetCursOnDateXml;
@@ -16,10 +17,11 @@ import java.util.List;
 
 //Данный класс наследуется от WebServiceTemplate, который предоставляет удобный способ взаимодействия с SOAP веб сервисами
 public class CentralRussianBankService extends WebServiceTemplate {
+
+
     //Тут случается некоторая магия Spring и в момент запуска вашего приложения, сюда поставляется значение из application.properties или application.yml
     @Value("${cbr.api.url}")
     private String cbrApiUrl;
-
 
 
     //Создаем метод получения данных
@@ -49,5 +51,12 @@ public class CentralRussianBankService extends WebServiceTemplate {
                 System.out.println(exception.getMessage());
                 return null;
             }
+    }
+
+    public void setCbrApiUrl(String cbrApiUrl) {
+        this.cbrApiUrl = cbrApiUrl;
+    }
+    public String getCbrApiUrl() {
+        return cbrApiUrl;
     }
 }
